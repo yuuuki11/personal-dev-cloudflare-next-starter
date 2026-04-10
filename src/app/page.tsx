@@ -34,12 +34,6 @@ export default function Home() {
           ))}
         </section>
 
-        <a 
-          href="https://github.com/yuuuki11/personal-dev-cloudflare-next-starter"
-          className="mt-12 px-8 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium shadow-[0_0_20px_rgba(5,150,105,0.3)] hover:shadow-[0_0_30px_rgba(5,150,105,0.5)] transition-all duration-300"
-        >
-          View Source
-        </a>
       </main>
     </div>
   );
