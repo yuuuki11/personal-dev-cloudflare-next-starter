@@ -1,52 +1,46 @@
-import Image from "next/image";
+import React from "react";
 
 export default function Home() {
-	return (
-		<div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-			<main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-				<Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={180} height={38} priority />
-				<ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-					<li className="mb-2 tracking-[-.01em]">
-						Get started by editing{" "}
-						<code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-							src/app/page.tsx
-						</code>
-						.
-					</li>
-					<li className="tracking-[-.01em]">Save and see your changes instantly.</li>
-				</ol>
+  return (
+    <div className="min-h-screen bg-neutral-900 text-white flex flex-col items-center justify-center relative overflow-hidden font-sans">
+      {/* Dynamic Background Effect */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-green-900/30 via-emerald-800/10 to-transparent pointer-events-none" />
+      <div className="absolute -top-[30%] -left-[10%] w-96 h-96 bg-green-500/20 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[10%] right-[5%] w-[30rem] h-[30rem] bg-emerald-600/10 blur-[150px] rounded-full pointer-events-none" />
 
-				<div className="flex gap-4 items-center flex-col sm:flex-row">
-					<a
-						className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-						href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Read our docs
-					</a>
-				</div>
-			</main>
-			<footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-				<a
-					className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-					href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image aria-hidden src="/file.svg" alt="File icon" width={16} height={16} />
-					Learn
-				</a>
-				<a
-					className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-					href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
-					Go to nextjs.org →
-				</a>
-			</footer>
-		</div>
-	);
+      {/* Main Content */}
+      <main className="z-10 flex flex-col items-center gap-8 px-6 text-center">
+        <div className="group relative inline-block">
+          <div className="absolute inset-0 bg-green-400 opacity-25 blur-lg rounded-full group-hover:opacity-50 transition-opacity duration-700" />
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-emerald-200 to-green-100 drop-shadow-sm mb-4 relative">
+            Naganegi Next.js
+          </h1>
+        </div>
+
+        <p className="text-lg md:text-xl text-neutral-300 max-w-2xl font-light leading-relaxed">
+          長ネギのようなシャキシャキとしたレスポンスと、<br className="hidden md:block"/>滋味深い SSR / API を備えたモダンウェブアプリケーション。
+        </p>
+
+        <section className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+          {[
+             { title: "Crisp Performance", desc: "Edge環境での超速なレンダリング。" },
+             { title: "Deep Flavor", desc: "APIルートとSSRによる奥深い体験。" },
+             { title: "Sweet Architecture", desc: "焼けば甘くなる洗練されたコードベース。" }
+          ].map((item, index) => (
+            <div key={index} className="p-6 rounded-2xl bg-white/5 border border-white/10 shadow-xl backdrop-blur-md hover:bg-white/10 hover:scale-105 transition-all duration-300 cursor-default group">
+              <h3 className="text-xl font-semibold mb-2 text-green-200 group-hover:text-green-300 transition-colors">{item.title}</h3>
+              <p className="text-sm text-neutral-400">{item.desc}</p>
+            </div>
+          ))}
+        </section>
+
+        <a 
+          href="https://github.com/yuuuki11/personal-dev-cloudflare-next-starter"
+          className="mt-12 px-8 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-medium shadow-[0_0_20px_rgba(5,150,105,0.3)] hover:shadow-[0_0_30px_rgba(5,150,105,0.5)] transition-all duration-300"
+        >
+          View Source
+        </a>
+      </main>
+    </div>
+  );
 }
